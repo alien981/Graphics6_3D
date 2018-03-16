@@ -112,7 +112,7 @@ def parse_file( fname, edges, transform, screen, color ):
             matrix_mult( transform, edges )
 
 	elif line == 'clear':
-		edges = []
+	    edges = []
 
         elif line == 'display' or line == 'save':
             clear_screen(screen)
