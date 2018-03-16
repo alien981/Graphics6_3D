@@ -3,7 +3,18 @@ from matrix import *
 from math import *
 
 def add_box( points, x, y, z, width, height, depth ):
-	pass
+	add_edge(points, x, y, z, x+width, y, z)
+	add_edge(points, x, y, z, x, y+height, z)
+	add_edge(points, x, y, z, x, y, z+depth)
+	add_edge(points, x+width, y, z, x+width, y+height, z)
+	add_edge(points, x+width, y, z, x+width, y, z+depth)
+	add_edge(points, x, y+height, z, x+width, y+height, z)
+	add_edge(points, x, y+height, z, x, y+height, z+depth)
+	add_edge(points, x, y, z+depth, x+width, y, z+depth)
+	add_edge(points, x, y, z+depth, x, y+height, z+depth)
+	add_edge(points, x+width, y+height, z, x+width, y+height, z+depth)
+	add_edge(points, x, y+height, z+depth, x+width, y+height, z+depth)
+	add_edge(points, x+width, y, z+depth, x+width, y+height, z+depth)
 
 def add_sphere( points, cx, cy, cz, r, step ):
     pass
