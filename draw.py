@@ -30,7 +30,17 @@ def add_sphere( points, cx, cy, cz, r, step ):
 	
 
 def add_torus( points, cx, cy, cz, r0, r1, step ):
-	pass
+	phi = 0.0
+	while phi<2*math.pi:
+		theta = 0.0
+		while theta<2*math.pi:
+			x = math.cos(phi) * (r1*math.cos(theta) +r0) +cx
+			y = r1*math.sin(theta) + cy
+			z = -math.sin(phi) * (r1*math.cos(theta) +r0) + cz
+			add_edge(points, x, y, z, x+1, y+1, z+1)
+			theta += 2*math.pi/step
+
+		phi += 2*math.pi/step
 
 
 def add_circle( points, cx, cy, cz, r, step ):
